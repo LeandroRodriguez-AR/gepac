@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from gepapp.views import inserta_paciente, ver_cliente, ver_pacientes
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+        path('a/', inserta_paciente ),
+    path('v/', ver_pacientes ),
+    path('pacientes/', ver_pacientes, name='ver_pacientes'),
+    path('cliente/<int:cliente_id>/', ver_cliente, name='ver_cliente'),
 ]
